@@ -36,7 +36,12 @@ public class Contador implements Runnable {
      */
     public void suma() {
         for(int i = 0; i < RONDAS; ++i){
-            valor = valor + 1;
+            try {
+                Thread.currentThread().sleep(1);
+                valor = valor + 1;
+            } catch (Exception e) {
+                System.err.println(e);
+            }
         }
     }
 
